@@ -59,7 +59,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
 
         myViewHolder.nameTxt.setText(name);
         myViewHolder.addressTxt.setText(address);
-        myViewHolder.fairwayTxt.setText(radat.get(position).getParList().size() +" Väylää");
+        myViewHolder.fairwayTxt.setText("Väyliä: " + radat.get(position).getParList().size());
     }
 
     @Override

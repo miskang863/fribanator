@@ -46,8 +46,8 @@ public class RataRepository {
         }
 
         @Override
-        protected Void doInBackground(Rata... currencies) {
-            rataDao.insert(currencies[0]);
+        protected Void doInBackground(Rata... radat) {
+            rataDao.insert(radat[0]);
             return null;
         }
     }
@@ -60,8 +60,8 @@ public class RataRepository {
         }
 
         @Override
-        protected Void doInBackground(Rata... currencies) {
-            rataDao.update(currencies[0]);
+        protected Void doInBackground(Rata... radat) {
+            rataDao.update(radat[0]);
             return null;
         }
     }

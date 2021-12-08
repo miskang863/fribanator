@@ -20,13 +20,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 
-@Database(entities = Rata.class, version = 1)
+@Database(entities = {Rata.class, Score.class}, version = 1)
 @TypeConverters(ParListConverter.class)
 public abstract class RataDatabase extends RoomDatabase {
 
     private static RataDatabase instance;
 
     public abstract RataDao rataDao();
+    public abstract ScoreDao scoreDao();
+
 
     public static synchronized RataDatabase getInstance(Context context) {
         if (instance == null) {
@@ -49,9 +51,12 @@ public abstract class RataDatabase extends RoomDatabase {
 
     private static class PopulateDbAsyncTask extends AsyncTask<Void, Void, Void> {
         private RataDao rataDao;
+        private ScoreDao scoreDao;
 
         private PopulateDbAsyncTask(RataDatabase db) {
+
             rataDao = db.rataDao();
+            scoreDao = db.scoreDao();
         }
 
         @Override
@@ -68,6 +73,8 @@ public abstract class RataDatabase extends RoomDatabase {
             rataDao.insert(new Rata("Sibbe DiscGolf", "Nakkivene 32", myPars3));
             rataDao.insert(new Rata("Nurmijärven Frisbeegolfrata", "Kuntokuja 69", myPars2));
             rataDao.insert(new Rata("Lakisto Frisbeepark", "Lakisto 43", myPars3));
+
+            scoreDao.insert(new Score("Siltamäen Frisbeegolfrata", myPars1));
 
             return null;
         }

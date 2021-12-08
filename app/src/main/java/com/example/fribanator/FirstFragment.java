@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 
 public class FirstFragment extends Fragment {
@@ -53,6 +54,8 @@ public class FirstFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
+        model = new ViewModelProvider(requireActivity()).get(RataViewModel.class);
+
         recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setHasFixedSize(true);
@@ -66,9 +69,13 @@ public class FirstFragment extends Fragment {
         });
 
         adapter.setOnItemClickListener(rata -> {
-            //model.select(rata);
-          //  SecondFragmentDirections.MyAction action = SecondFragmentDirections.myAction();
-          //  Navigation.findNavController(view).navigate(action);
+            model.select(rata);
+           // FirstFragmentDirections.myAction action = FirstFragmentDirections.myAction();
+          //  Navigation.findNavController(view).navigate(fir);
+
+            //Bundle bundle = new Bundle();
+            //bundle.put
+            Navigation.findNavController(view).navigate(R.id.myAction);
             Log.d("demotest", "onCreateView: " + rata.getName() + " clicked");
         });
         return view;

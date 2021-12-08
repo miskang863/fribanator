@@ -3,13 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/FirstFragment">
 
     <fragment
-        android:id="@+id/firstFragment"
+        android:id="@+id/FirstFragment"
         android:name="com.example.fribanator.FirstFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/myAction"
+            app:destination="@id/fourthFragment" />
+    </fragment>
     <fragment
         android:id="@+id/secondFragment"
         android:name="com.example.fribanator.SecondFragment"
@@ -20,4 +24,9 @@
         android:name="com.example.fribanator.ThirdFragment"
         android:label="fragment_third"
         tools:layout="@layout/fragment_third" />
+    <fragment
+        android:id="@+id/fourthFragment"
+        android:name="com.example.fribanator.FourthFragment"
+        android:label="fragment_fourth"
+        tools:layout="@layout/fragment_fourth" />
 </navigation>

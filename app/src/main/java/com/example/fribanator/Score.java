@@ -17,9 +17,13 @@ public class Score {
     @ColumnInfo(name = "scoreList")
     private ArrayList<Integer> scoreList;
 
-    public Score(String rataName, ArrayList<Integer> scoreList) {
+
+    private String date;
+
+    public Score(String rataName, ArrayList<Integer> scoreList, String date) {
         this.rataName = rataName;
         this.scoreList = scoreList;
+        this.date = date;
     }
 
     public int getScoreId() {
@@ -44,5 +48,13 @@ public class Score {
 
     public void setScoreList(ArrayList<Integer> scoreList) {
         this.scoreList = scoreList;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

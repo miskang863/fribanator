@@ -54,7 +54,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder myViewHolder, int position) {
         String name = radat.get(position).getName();
         String address = radat.get(position).getAddress();
-       // String fairway = radat.get(position).getParList().toString();
+        // String fairway = radat.get(position).getParList().toString();
         Log.d("demotest", "onBindViewHolder: " + address);
 
         myViewHolder.nameTxt.setText(name);

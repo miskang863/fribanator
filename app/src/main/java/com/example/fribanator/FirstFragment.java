@@ -70,11 +70,6 @@ public class FirstFragment extends Fragment {
 
         adapter.setOnItemClickListener(rata -> {
             model.select(rata);
-           // FirstFragmentDirections.myAction action = FirstFragmentDirections.myAction();
-          //  Navigation.findNavController(view).navigate(fir);
-
-            //Bundle bundle = new Bundle();
-            //bundle.put
             Navigation.findNavController(view).navigate(R.id.myAction);
             Log.d("demotest", "onCreateView: " + rata.getName() + " clicked");
         });

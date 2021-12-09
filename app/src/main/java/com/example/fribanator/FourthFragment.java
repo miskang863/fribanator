@@ -13,8 +13,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 
 
 public class FourthFragment extends Fragment {
@@ -115,7 +117,8 @@ public class FourthFragment extends Fragment {
 
                     Toast.makeText(view.getContext(), "Kierros ohi, tuloksesi: " + sum, Toast.LENGTH_LONG).show();
 
-                    scoreViewModel.insert(new Score(rata.getName(), scoreViewModel.scoreList));
+                    String date = new SimpleDateFormat("dd-MM-yyyy").format(new Date());
+                    scoreViewModel.insert(new Score(rata.getName(), scoreViewModel.scoreList, date));
                     scoreViewModel.resetCurrentFairway();
                     scoreViewModel.scoreList = null;
 

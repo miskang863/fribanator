@@ -23,10 +23,19 @@
         android:id="@+id/thirdFragment"
         android:name="com.example.fribanator.ThirdFragment"
         android:label="fragment_third"
-        tools:layout="@layout/fragment_third" />
+        tools:layout="@layout/fragment_third" >
+        <action
+            android:id="@+id/myAction2"
+            app:destination="@id/fifthFragment" />
+    </fragment>
     <fragment
         android:id="@+id/fourthFragment"
         android:name="com.example.fribanator.FourthFragment"
         android:label="fragment_fourth"
         tools:layout="@layout/fragment_fourth" />
+    <fragment
+        android:id="@+id/fifthFragment"
+        android:name="com.example.fribanator.FifthFragment"
+        android:label="fragment_fifth"
+        tools:layout="@layout/fragment_fifth" />
 </navigation>

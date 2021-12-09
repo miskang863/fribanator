@@ -54,7 +54,6 @@ public abstract class RataDatabase extends RoomDatabase {
         private ScoreDao scoreDao;
 
         private PopulateDbAsyncTask(RataDatabase db) {
-
             rataDao = db.rataDao();
             scoreDao = db.scoreDao();
         }
@@ -73,8 +72,6 @@ public abstract class RataDatabase extends RoomDatabase {
             rataDao.insert(new Rata("Sibbe DiscGolf", "Nakkivene 32", myPars3));
             rataDao.insert(new Rata("Nurmijärven Frisbeegolfrata", "Kuntokuja 69", myPars2));
             rataDao.insert(new Rata("Lakisto Frisbeepark", "Lakisto 43", myPars3));
-
-            scoreDao.insert(new Score("Siltamäen Frisbeegolfrata", myPars1));
 
             return null;
         }

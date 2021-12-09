@@ -37,9 +37,12 @@ public class SecondFragment extends Fragment implements LocationListener {
     View view;
     LocationManager locationManager;
     Button location_button;
-    TextView textView;
+    TextView distaceTV;
     List<Location> coordinates;
     Location lastLocation;
+    Location finalLocation;
+    Boolean counting = false;
+    boolean buttonPressed;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -75,7 +78,6 @@ public class SecondFragment extends Fragment implements LocationListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -87,19 +89,34 @@ public class SecondFragment extends Fragment implements LocationListener {
                              Bundle savedInstanceState) {
          view = inflater.inflate(R.layout.fragment_second, container, false);
         location_button = view.findViewById(R.id.locationButton);
-        textView = view.findViewById(R.id.textView);
+        distaceTV = view.findViewById(R.id.distanceInM);
         if (ContextCompat.checkSelfPermission(view.getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
 
             ActivityCompat.requestPermissions(getActivity(), new String[]{
                     Manifest.permission.ACCESS_FINE_LOCATION
             }, 100);
         }
+        getLocation();
         Log.d("juu", "onCreateView: ");
         location_button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Log.d("juu", "onClick: ");
+                buttonPressed = true;
                 getLocation();
+                if (counting){
+                    counting=false;
+                    location_button.setText("Start Counting");
+
+
+                }else {
+
+                    counting = true;
+                    location_button.setText("Stop Counting");
+
+                }
+
+
 
             }
         });
@@ -126,23 +143,19 @@ public class SecondFragment extends Fragment implements LocationListener {
     @Override
     public void onLocationChanged(@NonNull Location location) {
         Log.d("juu",""+ location.getLatitude()+ ", "+location.getLongitude()+ " " );
-        if (lastLocation != null){
-            Log.d("juu",""+ location.distanceTo(lastLocation) + " " );
+        if (counting==true){
+
+            lastLocation = location;
+            locationManager.removeUpdates(this);
+        }else{
+            finalLocation = location;
+
+            if (finalLocation != null && lastLocation != null && buttonPressed == true){countDistance(lastLocation,finalLocation);}
 
         }
-        lastLocation = location;
 
 
 
-        try {
-            Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
-            List<Address> addresses = geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
-            String address = addresses.get(0).getAddressLine(0);
-            textView.setText(address);
-
-        }catch (Exception e ){
-            e.printStackTrace();
-        }
 
     }
     @Override
@@ -157,6 +170,15 @@ public class SecondFragment extends Fragment implements LocationListener {
 
     @Override
     public void onProviderDisabled(String provider) {
+
+    }
+
+    public void countDistance(Location location, Location location2) {
+        Log.d("juu", "countDistance: "+ location.distanceTo(location2));
+        Log.d("juu", "1 " + location +"2" + location2);
+        distaceTV.setText(""+location.distanceTo(location2)+"M");
+        buttonPressed = false;
+        locationManager.removeUpdates(this);
 
     }
 

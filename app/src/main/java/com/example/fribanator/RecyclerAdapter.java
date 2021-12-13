@@ -18,8 +18,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     private OnItemClickListener listener;
 
 
-
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView nameTxt;
         private TextView addressTxt;
         private TextView fairwayTxt;
@@ -54,8 +53,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
     public void onBindViewHolder(@NonNull RecyclerAdapter.MyViewHolder myViewHolder, int position) {
         String name = radat.get(position).getName();
         String address = radat.get(position).getAddress();
-        // String fairway = radat.get(position).getParList().toString();
-        Log.d("demotest", "onBindViewHolder: " + address);
 
         myViewHolder.nameTxt.setText(name);
         myViewHolder.addressTxt.setText(address);

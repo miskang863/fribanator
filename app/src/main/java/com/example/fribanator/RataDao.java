@@ -26,7 +26,4 @@ public interface RataDao {
 
     @Query("SELECT * FROM rata_table ORDER BY name ASC")
     LiveData<List<Rata>> getAllRatas();
-
-    //@Query("SELECT * FROM currencies")
-
 }

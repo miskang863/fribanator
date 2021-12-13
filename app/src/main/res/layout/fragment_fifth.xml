@@ -9,11 +9,12 @@
 
     <TextView
         android:id="@+id/historyName"
-        android:layout_width="213dp"
-        android:layout_height="26dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="374dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="40dp"
         android:text="TextView"
+        android:textColor="#000000"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,23 +24,22 @@
         android:id="@+id/historyDate"
         android:layout_width="82dp"
         android:layout_height="17dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/historyName" />
 
     <TextView
         android:id="@+id/historyScores"
-        android:layout_width="345dp"
-        android:layout_height="435dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="348dp"
+        android:layout_height="340dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/historyName" />
+        app:layout_constraintTop_toBottomOf="@+id/historyDate" />
 
     <TextView
         android:id="@+id/scoreSumTxt"
@@ -47,6 +47,8 @@
         android:layout_height="26dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="#000000"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/historyScores"
         app:layout_constraintTop_toBottomOf="@+id/historyScores" />
 </androidx.constraintlayout.widget.ConstraintLayout>

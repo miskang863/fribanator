@@ -17,8 +17,7 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<ScoreRecyclerAdap
     private OnItemClickListener listener;
 
 
-
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    public class MyViewHolder extends RecyclerView.ViewHolder {
         private TextView nameTxt;
         private TextView dateTxt;
         private TextView scoreTxt;
@@ -28,7 +27,6 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<ScoreRecyclerAdap
             super(view);
             nameTxt = view.findViewById(R.id.scoreTxt2);
             dateTxt = view.findViewById(R.id.scoreDateTxt);
-           // scoreTxt = view.findViewById(R.id.scoreNameTxt);
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -53,11 +51,8 @@ public class ScoreRecyclerAdapter extends RecyclerView.Adapter<ScoreRecyclerAdap
     public void onBindViewHolder(@NonNull ScoreRecyclerAdapter.MyViewHolder myViewHolder, int position) {
         String name = scores.get(position).getRataName();
         String date = scores.get(position).getDate();
-         //String scoreResult = scores.get(position).getParList().toString();
-      //  Log.d("demotest", "onBindViewHolder: " + address);
         myViewHolder.nameTxt.setText(name);
         myViewHolder.dateTxt.setText(date);
-     //   myViewHolder.fairwayTxt.setText("Väyliä: " + radat.get(position).getParList().size());
     }
 
     @Override

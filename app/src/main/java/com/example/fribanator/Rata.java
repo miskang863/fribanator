@@ -50,7 +50,9 @@ public class Rata {
         this.address = address;
     }
 
-    public ArrayList<Integer> getParList() {return parList;}
+    public ArrayList<Integer> getParList() {
+        return parList;
+    }
 
     public void setParList(ArrayList<Integer> parList) {
         this.parList = parList;
@@ -65,7 +67,8 @@ public class Rata {
 class ParListConverter {
     @TypeConverter
     public static ArrayList<Integer> fromString(String value) {
-        Type listType = new TypeToken<ArrayList<String>>() {}.getType();
+        Type listType = new TypeToken<ArrayList<String>>() {
+        }.getType();
         return new Gson().fromJson(value, listType);
     }
 
@@ -74,4 +77,5 @@ class ParListConverter {
         Gson gson = new Gson();
         String json = gson.toJson(list);
         return json;
-    }}
+    }
+}

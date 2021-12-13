@@ -38,10 +38,6 @@ public class Score {
         return rataName;
     }
 
-    public void setRataName(String rataName) {
-        this.rataName = rataName;
-    }
-
     public ArrayList<Integer> getScoreList() {
         return scoreList;
     }

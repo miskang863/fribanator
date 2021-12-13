@@ -17,8 +17,4 @@ public interface ScoreDao {
 
     @Query("SELECT * FROM score_table ORDER BY rataName ASC")
     LiveData<List<Score>> getAllScores();
-
-//    @Update
-  //  void update(Rata rata);
-    //@Query("SELECT * FROM currencies")
 }

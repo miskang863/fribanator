@@ -86,16 +86,9 @@ public class FourthFragment extends Fragment {
         saveBtn.setOnClickListener(v -> {
 
             model.getSelected().observe(getViewLifecycleOwner(), rata -> {
-                Log.d("demotest", "parlist size: " + rata.getParList().size());
-                Log.d("demotest", "currentfairway: " + scoreViewModel.currentFairway);
-
-
                 if ((scoreViewModel.currentFairway + 1) < rata.getParList().size()) {
-                    Log.d("demotest", "" + rata.getParList());
-
                     String test = String.valueOf(rata.getParList().get(scoreViewModel.currentFairway));
                     Integer fairwayScore = scoreViewModel.scoreNumber - Integer.parseInt(test);
-                    Log.d("demotest", "fairwayscore saved " + fairwayScore);
                     scoreViewModel.scoreList.add(fairwayScore);
                     scoreViewModel.plusCurrentFairway();
                     fairwayInfo.setText("Väylä " + (scoreViewModel.currentFairway + 1) + "\nPar: " + rata.getParList().get(scoreViewModel.currentFairway));

@@ -70,7 +70,7 @@ public class FourthFragment extends Fragment {
 
         model.getSelected().observe(getViewLifecycleOwner(), rata -> {
             rataName.setText(rata.getName());
-            fairwayInfo.setText("Väylä: "+ (scoreViewModel.currentFairway + 1) + "\nPar: " + rata.getParList().get(scoreViewModel.currentFairway));
+            fairwayInfo.setText("Väylä: " + (scoreViewModel.currentFairway + 1) + "\nPar: " + rata.getParList().get(scoreViewModel.currentFairway));
         });
 
         minusBtn.setOnClickListener(v -> {
@@ -90,11 +90,11 @@ public class FourthFragment extends Fragment {
                 Log.d("demotest", "currentfairway: " + scoreViewModel.currentFairway);
 
 
-                if((scoreViewModel.currentFairway + 1) < rata.getParList().size() ) {
+                if ((scoreViewModel.currentFairway + 1) < rata.getParList().size()) {
                     Log.d("demotest", "" + rata.getParList());
 
-                    String test =  String.valueOf(rata.getParList().get(scoreViewModel.currentFairway));
-                    Integer fairwayScore =  scoreViewModel.scoreNumber - Integer.parseInt(test);
+                    String test = String.valueOf(rata.getParList().get(scoreViewModel.currentFairway));
+                    Integer fairwayScore = scoreViewModel.scoreNumber - Integer.parseInt(test);
                     Log.d("demotest", "fairwayscore saved " + fairwayScore);
                     scoreViewModel.scoreList.add(fairwayScore);
                     scoreViewModel.plusCurrentFairway();
@@ -103,13 +103,13 @@ public class FourthFragment extends Fragment {
                     scoreViewModel.resetScoreNumber();
                     scoreTxt.setText(String.valueOf(scoreViewModel.scoreNumber));
 
-                }else {
-                    String test =  String.valueOf(rata.getParList().get(scoreViewModel.currentFairway));
-                    Integer fairwayScore =  scoreViewModel.scoreNumber - Integer.parseInt(test);
+                } else {
+                    String test = String.valueOf(rata.getParList().get(scoreViewModel.currentFairway));
+                    Integer fairwayScore = scoreViewModel.scoreNumber - Integer.parseInt(test);
                     scoreViewModel.scoreList.add(fairwayScore);
 
                     int sum = 0;
-                    for(int i: scoreViewModel.scoreList) {
+                    for (int i : scoreViewModel.scoreList) {
                         sum += i;
                     }
 
@@ -132,6 +132,6 @@ public class FourthFragment extends Fragment {
             });
         });
 
-return  view;
+        return view;
     }
 }

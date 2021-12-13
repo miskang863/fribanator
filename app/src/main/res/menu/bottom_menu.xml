@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:title="Home"
+        android:id="@+id/FirstFragment"
         android:icon="@drawable/ic_home"
-        android:id="@+id/FirstFragment"/>
+        android:title="Pelaamaan" />
 
     <item
-        android:title="Distance"
+        android:id="@+id/secondFragment"
         android:icon="@drawable/ic_hiking"
-        android:id="@+id/secondFragment"/>
+        android:title="Pituusheitto" />
     <item
-        android:title="History"
+        android:id="@+id/thirdFragment"
         android:icon="@drawable/ic_history"
-        android:id="@+id/thirdFragment"/>
+        android:title="Historia" />
 
 </menu>

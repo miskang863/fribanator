@@ -105,13 +105,13 @@ public class SecondFragment extends Fragment implements LocationListener {
                 getLocation();
                 if (counting){
                     counting=false;
-                    location_button.setText("Start Counting");
+                    location_button.setText("Aloita laskeminen");
 
 
                 }else {
 
                     counting = true;
-                    location_button.setText("Stop Counting");
+                    location_button.setText("Lopeta laskeminen");
 
                 }
 

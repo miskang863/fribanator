@@ -38,7 +38,6 @@ public class SecondFragment extends Fragment implements LocationListener {
     LocationManager locationManager;
     Button location_button;
     TextView distaceTV;
-    List<Location> coordinates;
     Location lastLocation;
     Location finalLocation;
     Boolean counting = false;

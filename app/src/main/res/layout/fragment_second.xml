@@ -8,11 +8,13 @@
 
     <TextView
         android:id="@+id/distanceInM"
-        android:layout_width="228dp"
-        android:layout_height="85dp"
-        android:text="secondfrag"
+        android:layout_width="280dp"
+        android:layout_height="159dp"
+        android:text="0m"
         android:textAlignment="center"
         android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="60sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -31,10 +33,12 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="230dp"
-        android:layout_height="33dp"
+        android:layout_width="242dp"
+        android:layout_height="54dp"
         android:text="Count distance"
         android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/distanceInM"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -175,7 +175,8 @@ public class SecondFragment extends Fragment implements LocationListener {
     public void countDistance(Location location, Location location2) {
         Log.d("juu", "countDistance: "+ location.distanceTo(location2));
         Log.d("juu", "1 " + location +"2" + location2);
-        distaceTV.setText(""+location.distanceTo(location2)+"M");
+        int distace = (int) location.distanceTo(location2);
+        distaceTV.setText(""+distace+"M");
         buttonPressed = false;
         locationManager.removeUpdates(this);
 

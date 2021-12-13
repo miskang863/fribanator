@@ -3,12 +3,12 @@
 
     <item
         android:id="@+id/FirstFragment"
-        android:icon="@drawable/ic_home"
+        android:icon="@drawable/ic_baseline_play_arrow_24"
         android:title="Pelaamaan" />
 
     <item
         android:id="@+id/secondFragment"
-        android:icon="@drawable/ic_hiking"
+        android:icon="@drawable/ic_measure_icon_26"
         android:title="Pituusheitto" />
     <item
         android:id="@+id/thirdFragment"

@@ -24,7 +24,8 @@ public class ThirdFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ThirdFragment() { }
+    public ThirdFragment() {
+    }
 
     public static ThirdFragment newInstance(String param1, String param2) {
         ThirdFragment fragment = new ThirdFragment();
@@ -66,7 +67,6 @@ public class ThirdFragment extends Fragment {
         adapter.setOnItemClickListener(score -> {
             model.select(score);
             Navigation.findNavController(view).navigate(R.id.myAction2);
-            Log.d("frag5", "onCreateView: " + score.getRataName() + " clicked");
         });
 
         return view;

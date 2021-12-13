@@ -25,7 +25,6 @@ public class ScoreRepository {
         return allScores;
     }
 
-
     private static class InsertScoreAsyncTask extends AsyncTask<Score, Void, Void> {
         private ScoreDao scoreDao;
 

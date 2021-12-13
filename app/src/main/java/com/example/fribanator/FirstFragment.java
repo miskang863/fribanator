@@ -71,7 +71,6 @@ public class FirstFragment extends Fragment {
         adapter.setOnItemClickListener(rata -> {
             model.select(rata);
             Navigation.findNavController(view).navigate(R.id.myAction);
-            Log.d("demotest", "onCreateView: " + rata.getName() + " clicked");
         });
         return view;
     }

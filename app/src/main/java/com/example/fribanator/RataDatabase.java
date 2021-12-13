@@ -27,6 +27,7 @@ public abstract class RataDatabase extends RoomDatabase {
     private static RataDatabase instance;
 
     public abstract RataDao rataDao();
+
     public abstract ScoreDao scoreDao();
 
 
@@ -60,9 +61,9 @@ public abstract class RataDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(Void... voids) {
-            ArrayList<Integer> myPars1 = new ArrayList<>(Arrays.asList(3,3,4,3,3,4,2,2,3));
-            ArrayList<Integer> myPars2 = new ArrayList<>(Arrays.asList(3,3,4,3,3,4,2,2,3));
-            ArrayList<Integer> myPars3 = new ArrayList<>(Arrays.asList(3,3,4,3,3,4,2,2,3,3,3,4,3,3,4,2,2,3));
+            ArrayList<Integer> myPars1 = new ArrayList<>(Arrays.asList(3, 3, 4, 3, 3, 4, 2, 2, 3));
+            ArrayList<Integer> myPars2 = new ArrayList<>(Arrays.asList(3, 3, 4, 3, 3, 4, 2, 2, 3));
+            ArrayList<Integer> myPars3 = new ArrayList<>(Arrays.asList(3, 3, 4, 3, 3, 4, 2, 2, 3, 3, 3, 4, 3, 3, 4, 2, 2, 3));
 
             rataDao.insert(new Rata("Siltamäen Frisbeegolfrata", "Kukkopolku 1", myPars1));
             rataDao.insert(new Rata("Ford Frisbeegolf", "Kuusitie 3", myPars2));
